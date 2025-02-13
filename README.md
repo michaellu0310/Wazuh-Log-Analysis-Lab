@@ -15,5 +15,12 @@ Key Skills:
 #
 
 ## Setup
-To set up for the lab, we will download [VirtualBox](https://www.virtualbox.org/wiki/Downloads) and set up with the latest [Ubuntu Server (ver. 24.04.1)](https://ubuntu.com/download/server).
+To set up for the lab, we will download [VirtualBox](https://www.virtualbox.org/wiki/Downloads) and set up with the latest [Ubuntu Server (ver. 24.04.1)](https://ubuntu.com/download/server). To ensure that our Ubuntu-SIEM VM has its own ip address to allow for SSH, we change the network settings from NAT to Bridged Adapter. We also check and update current software packages using the command, ``sudo apt update && sudo apt upgrade -y``.
 ![1](https://github.com/user-attachments/assets/2a2eadcd-9b7b-4dc6-bc1f-2581f4d7e6e9)
+![2](https://github.com/user-attachments/assets/a0be7459-929f-4ffd-ae27-65f50702ffb4)
+
+#
+
+### SSH Setup
+The next step involves installing SSH server with command, ``sudo apt install -y openssh-server`` and enabling it using the commands ``sudo systemctl enable ssh`` and ``sudo systemctl start ssh``. Due to the previous step taken in network settings, we can find the ip address using ``ip a``.\
+![SSH](https://github.com/user-attachments/assets/66a91707-89bf-4c32-a7c3-316e3e09a8aa)
