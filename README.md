@@ -33,3 +33,20 @@ Now mySQL can be accessed each time using the command ``sudo mysql -u root -p``.
 ![3](https://github.com/user-attachments/assets/06a189e2-3349-40fd-9ca3-f6af588565f6)
 
 
+And now we create a table for security events for the database that came across Wazuh:
+```
+CREATE TABLE security_events (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    timestamp DATETIME DEFAULT CURRENT_TIMESTAMP,
+    event_id INT,
+    event_description VARCHAR(255),
+    source_ip VARCHAR(45),
+    username VARCHAR(100)
+);
+```
+This is a visual example of how the table created will be shown:
+|  id  |       timestamp       |  event_id  |    event_description    |    source_ip   |   username  |
+|------|:---------------------:|:----------:|:-----------------------:|:--------------:|:-----------:|
+|   1  |  2025-02-14 10:00:00  |    4625    |   Failed login attempt  |  192.168.1.01  |    admin    |
+|   2  |  2025-02-14 10:02:30  |    4624    |     Successful login    |  192.168.1.01  |    admin    |
+|   3  |  2025-02-14 10:00:00  |    4625    |   Failed login attempt  |  192.168.1.02  |    user1    |
