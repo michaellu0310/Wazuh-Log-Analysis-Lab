@@ -22,8 +22,14 @@ To set up for the lab, we will download [VirtualBox](https://www.virtualbox.org/
 #
 
 ### SSH Setup
-The next step involves installing SSH server with command, ``sudo apt install -y openssh-server`` and enabling it using the commands ``sudo systemctl enable ssh`` and ``sudo systemctl start ssh``. Due to the previous step taken in network settings, we can find the ip address using ``ip a``.\
+The next step involves installing SSH server with command, ``sudo apt install -y openssh-server`` and enabling it using the commands ``sudo systemctl enable ssh`` and ``sudo systemctl start ssh``. Due to the previous step taken in network settings, we can find the ip address using ``ip a``. Now from your host machine, you can SSH onto your Ubuntu machine using ``ssh (name)@ipaddress``.
 ![SSH](https://github.com/user-attachments/assets/66a91707-89bf-4c32-a7c3-316e3e09a8aa)
 
 ### Wazuh & mySQL Setup
 We run the command, ``curl -sO https://packages.wazuh.com/4.10/wazuh-install.sh`` to install Wazuh for SIEM/XDR.  After, we run the command ``sudo apt install -y mysql-server`` and ``sudo mysql_secure_installation`` to install mySQL. During the installation process we answer 2 for strong password, and answer y to remove anonymous users, to disallow root login remotely, remove test data base and access to it, and to reload privilege tables now.
+
+### mySQL for Wazuh Logs
+Now mySQL can be accessed each time using the command ``sudo mysql -u root -p``. The commands ``CREATE DATABASE wazuh_logs;`` and ``USE wazuh_logs;`` are next used to create and work within wazuh_logs databbase.
+![3](https://github.com/user-attachments/assets/06a189e2-3349-40fd-9ca3-f6af588565f6)
+
+
