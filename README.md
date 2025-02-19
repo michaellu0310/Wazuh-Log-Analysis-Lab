@@ -26,7 +26,7 @@ The next step involves installing SSH server with command, ``sudo apt install -y
 ![SSH](https://github.com/user-attachments/assets/66a91707-89bf-4c32-a7c3-316e3e09a8aa)
 
 ### Wazuh & mySQL Setup
-We run the command, ``curl -sO https://packages.wazuh.com/4.10/wazuh-install.sh`` to install Wazuh for SIEM/XDR.  After, we run the command ``sudo apt install -y mysql-server`` and ``sudo mysql_secure_installation`` to install mySQL. During the installation process we answer 2 for strong password, and answer y to remove anonymous users, to disallow root login remotely, remove test data base and access to it, and to reload privilege tables now.
+We run the command, ``curl -sO https://packages.wazuh.com/4.10/wazuh-install.sh`` and ``sudo bash wazuh-install.sh --wazuh-server SIEM-Node`` to install Wazuh for SIEM/XDR.  After, we run the command ``sudo apt install -y mysql-server`` and ``sudo mysql_secure_installation`` to install mySQL. During the installation process we answer 2 for strong password, and answer y to remove anonymous users, to disallow root login remotely, remove test data base and access to it, and to reload privilege tables now.
 
 ### mySQL for Wazuh Logs
 Now mySQL can be accessed each time using the command ``sudo mysql -u root -p``. The commands ``CREATE DATABASE wazuh_logs;`` and ``USE wazuh_logs;`` are next used to create and work within wazuh_logs databbase.
