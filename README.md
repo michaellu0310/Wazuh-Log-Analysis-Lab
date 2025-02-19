@@ -50,3 +50,5 @@ This is a visual example of how the table created will be shown:
 |   1  |  2025-02-14 10:00:00  |    4625    |   Failed login attempt  |  192.168.1.01  |    admin    |
 |   2  |  2025-02-14 10:02:30  |    4624    |     Successful login    |  192.168.1.01  |    admin    |
 |   3  |  2025-02-14 10:40:45  |    4625    |   Failed login attempt  |  192.168.1.02  |    user1    |
+
+The next step is to configure Wazuh's file for logs to send to mySQL, ``sudo nano /var/ossec/etc/ossec.conf``.
