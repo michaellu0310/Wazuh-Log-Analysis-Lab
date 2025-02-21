@@ -52,3 +52,8 @@ This is a visual example of how the table created will be shown:
 |   3  |  2025-02-14 10:40:45  |    4625    |   Failed login attempt  |  192.168.1.02  |    user1    |
 
 The next step is to configure Wazuh's file for logs to send to mySQL, ``sudo nano /var/ossec/etc/ossec.conf``.
+
+### Challenges & Solutions
+**Challenge 1:** VM does not meet the recommended minimum hardware requirements of 2Gb of RAM and 2 CPU cores when installing Wazuh.
+
+**Solution 1:** Use the command included with ``-i`` to ignore requirements, ``sudo bash wazuh-install.sh --wazuh-server SIEM-Node -i``
