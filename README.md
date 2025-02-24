@@ -26,7 +26,9 @@ The next step involves installing SSH server with command, ``sudo apt install -y
 ![SSH](https://github.com/user-attachments/assets/66a91707-89bf-4c32-a7c3-316e3e09a8aa)
 
 ### Wazuh Installation & Setup
-We run the command, ``wget https://packages.wazuh.com/4.10/wazuh-install.sh`` and ``sudo bash wazuh-install.sh --wazuh-server SIEM-Node`` to install Wazuh for SIEM/XDR.
+We run the command, ``wget https://packages.wazuh.com/4.11/wazuh-install.sh`` and ``wget https://packages.wazuh.com/4.11/config.yml`` to install Wazuh for SIEM/XDR. Inside config.yml change the names and add the VM's ip address and then run the command, ``sudo bash wazuh-install.sh --generate-config-files`` and ``sudo bash wazuh-install.sh --wazuh-server wazuh-manager -i``
+![config](https://github.com/user-attachments/assets/b097bf82-3949-4949-9086-4928e1d8131c)
+
 
 ### mySQL Installation
 After, we run the command ``sudo apt install -y mysql-server`` and ``sudo mysql_secure_installation`` to install mySQL. During the installation process we answer 2 for strong password, and answer y to remove anonymous users, to disallow root login remotely, remove test data base and access to it, and to reload privilege tables now.
@@ -59,4 +61,4 @@ The next step is to configure Wazuh's file for logs to send to mySQL, ``sudo nan
 ### Challenges & Solutions
 **Challenge 1:** VM does not meet the recommended minimum hardware requirements of 2Gb of RAM and 2 CPU cores when installing Wazuh.
 
-**Solution 1:** Use the command included with ``-i`` to ignore requirements, ``sudo bash wazuh-install.sh --wazuh-server SIEM-Node -i``
+**Solution 1:** Use the command included with ``-i`` to ignore requirements, ``sudo bash wazuh-install.sh --wazuh-server wazuh-manager -i``
