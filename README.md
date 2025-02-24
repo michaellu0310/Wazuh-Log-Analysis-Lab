@@ -26,7 +26,7 @@ The next step involves installing SSH server with command, ``sudo apt install -y
 ![SSH](https://github.com/user-attachments/assets/66a91707-89bf-4c32-a7c3-316e3e09a8aa)
 
 ### Wazuh Installation & Setup
-We run the command, ``wget https://packages.wazuh.com/4.11/wazuh-install.sh`` and ``wget https://packages.wazuh.com/4.11/config.yml`` to install Wazuh for SIEM/XDR. Inside config.yml change the names and add the VM's ip address and then run the command, ``sudo bash wazuh-install.sh --generate-config-files`` and ``sudo bash wazuh-install.sh --wazuh-server wazuh-manager -i``
+We run the command, ``wget https://packages.wazuh.com/4.11/wazuh-install.sh`` and ``wget https://packages.wazuh.com/4.11/config.yml`` to install Wazuh for SIEM/XDR. Inside config.yml change the names and add the VM's ip address and then run the command, ``sudo bash wazuh-install.sh --generate-config-files`` and ``sudo bash wazuh-install.sh --wazuh-server wazuh-manager -i``.
 ![config](https://github.com/user-attachments/assets/b097bf82-3949-4949-9086-4928e1d8131c)
 
 
