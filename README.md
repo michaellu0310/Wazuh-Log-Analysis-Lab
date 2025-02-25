@@ -59,6 +59,10 @@ This is a visual example of how the table created will be shown:
 The next step is to configure Wazuh's file for logs to send to mySQL, ``sudo nano /var/ossec/etc/ossec.conf``.
 
 ### Challenges & Solutions
-**Challenge 1:** VM does not meet the recommended minimum hardware requirements of 2Gb of RAM and 2 CPU cores when installing Wazuh.
+**Challenge 1:** VM does not have a dedicated IP address within network.
 
-**Solution 1:** Use the command included with ``-i`` to ignore requirements, ``sudo bash wazuh-install.sh --wazuh-server wazuh-manager -i``
+**Solution 1:** In VirtualBox Manager change the Ubuntu's network settings from NAT to Bridged Adapter.
+
+**Challenge 2:** VM does not meet the recommended minimum hardware requirements of 2Gb of RAM and 2 CPU cores when installing Wazuh.
+
+**Solution 2:** Use the command included with ``-i`` to ignore requirements, ``sudo bash wazuh-install.sh --wazuh-server wazuh-manager -i``.
