@@ -56,7 +56,15 @@ This is a visual example of how the table created will be shown:
 |   2  |  2025-02-14 10:02:30  |    4624    |     Successful login    |  192.168.1.01  |    admin    |
 |   3  |  2025-02-14 10:40:45  |    4625    |   Failed login attempt  |  192.168.1.02  |    user1    |
 
-The next step is to configure Wazuh's file for logs to send to mySQL, ``sudo nano /var/ossec/etc/ossec.conf``.
+The next step is to configure Wazuh's file for logs to send to mySQL, ``sudo nano /var/ossec/etc/ossec.conf`` and add the following lines:
+
+```
+<command>
+    <name>send_to_mysql</name>
+    <executable>mysql</executable>
+    <parameters>-u root -pYOURPASSWORD -D wazuh_logs -e "INSERT INTO security_events (event_id, event_description, source_ip, username) VALUES ('$EVENTID', '$DESCRIPTION', '$SRCIP', '$USERNAME');"</parameters>
+</command>
+```
 
 ### Challenges & Solutions
 **Challenge 1:** VM does not have a dedicated IP address within network.
