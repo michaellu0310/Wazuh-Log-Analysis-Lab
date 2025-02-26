@@ -84,6 +84,6 @@ After, restart Wazuh for these updated commands to log using ``sudo /var/ossec/b
 
 **Solution 2:** Use the command included with ``-i`` to ignore requirements, ``sudo bash wazuh-install.sh --wazuh-server wazuh-manager -i``.
 
-**Challenge 3:** Element <parameters> is not supported when configuring ossec.conf.
+**Challenge 3:** Element '< parameters >' is not supported when configuring ossec.conf.
 
 **Solution 3:** Work around with an executable script send_to_mysql.sh.
