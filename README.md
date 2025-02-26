@@ -75,6 +75,10 @@ Next we configure Wazuh's file for logs to send to mySQL, ``sudo nano /var/ossec
 
 After, restart Wazuh for these updated commands to log using ``sudo /var/ossec/bin/wazuh-control restart``. Throughout the process the command ``sudo systemctl status wazuh-manager`` can be used to check on the status.
 
+### Verify Data
+
+We manually add a log onto mysql, ``sudo /var/ossec/bin/send_to_mysql.sh "1001" "Test Event" "192.168.1.1" "admin"``
+
 ### Challenges & Solutions
 **Challenge 1:** VM does not have a dedicated IP address within network.
 
