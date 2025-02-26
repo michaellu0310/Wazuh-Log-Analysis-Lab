@@ -66,6 +66,8 @@ The next step is to configure Wazuh's file for logs to send to mySQL, ``sudo nan
 </command>
 ```
 
+After, restart Wazuh for these updated commands to log, ``sudo systemctl restart wazuh-manager``.
+
 ### Challenges & Solutions
 **Challenge 1:** VM does not have a dedicated IP address within network.
 
