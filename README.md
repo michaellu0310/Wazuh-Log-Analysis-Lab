@@ -52,9 +52,9 @@ CREATE TABLE security_events (
 This is a visual example of how the table created will be shown:
 |  id  |       timestamp       |  event_id  |    event_description    |    source_ip   |   username  |
 |------|:---------------------:|:----------:|:-----------------------:|:--------------:|:-----------:|
-|   1  |  2025-02-14 10:00:00  |    4625    |   Failed login attempt  |  192.168.1.01  |    admin    |
-|   2  |  2025-02-14 10:02:30  |    4624    |     Successful login    |  192.168.1.01  |    admin    |
-|   3  |  2025-02-14 10:40:45  |    4625    |   Failed login attempt  |  192.168.1.02  |    user1    |
+|   1  |  2025-02-14 10:00:00  |    4625    |   Failed login attempt  |  192.168.1.1   |    admin    |
+|   2  |  2025-02-14 10:02:30  |    4624    |     Successful login    |  192.168.1.1   |    admin    |
+|   3  |  2025-02-14 10:40:45  |    4625    |   Failed login attempt  |  192.168.1.2   |    user1    |
 
 The next step is to add an executable using ``sudo nano /var/ossec/bin/send_to_mysql.sh``. Add the following lines:
 ```
@@ -77,7 +77,10 @@ After, restart Wazuh for these updated commands to log using ``sudo /var/ossec/b
 
 ### Verify Data
 
-We manually add a log onto mysql, ``sudo /var/ossec/bin/send_to_mysql.sh "1001" "Test Event" "192.168.1.1" "admin"``
+We manually add a log onto mysql, ``sudo /var/ossec/bin/send_to_mysql.sh "1001" "Test Event" "192.168.1.1" "admin"``.  Next log into mySQL and run the command, ``SELECT * FROM security_events;`` and this should display the one log we created.
+
+![testlog](https://github.com/user-attachments/assets/96019196-8f4b-4f25-8494-69255f68197b)
+
 
 ### Challenges & Solutions
 **Challenge 1:** VM does not have a dedicated IP address within network.
