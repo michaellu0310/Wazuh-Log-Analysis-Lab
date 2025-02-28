@@ -81,6 +81,11 @@ We manually add a log onto mysql, ``sudo /var/ossec/bin/send_to_mysql.sh "1001" 
 
 ![testlog](https://github.com/user-attachments/assets/96019196-8f4b-4f25-8494-69255f68197b)
 
+# Automate & Monitor Logs in Real Time
+
+Now that we have checked that the original log showed, we can automate the process now every 2 seconds using, ``sudo watch -n 2 "mysql -u root -D wazuh_logs -e 'SELECT * FROM security_events;'"``
+
+![automated](https://github.com/user-attachments/assets/d428632c-59ce-4a28-ba3b-227a4e8b96c8)
 
 ### Challenges & Solutions
 **Challenge 1:** VM does not have a dedicated IP address within network.
