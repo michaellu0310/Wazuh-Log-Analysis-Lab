@@ -5,12 +5,11 @@
 This project focuses on log analysis, threat detection, and security monitoring using Wazuh SIEM. The goal is to collect, analyze, and detect suspicious activities such as failed login attempts, privilege escalation, and PowerShell abuse in a Windows environment. By simulating real-world attack scenarios, this lab demonstrates how a Security Operations Center (SOC) Analyst can investigate Windows Event Logs and respond to security incidents.
 
 Key Skills:
-- Log Analysis & SIEM (Wazuh, Graylog, Windows Event Viewer, Sysmon)
-- Threat Detection & Incident Response (MITRE ATT&CK, PowerShell Logging, Windows Defender)
-- Network Traffic Analysis (Wireshark, Suricata, Zeek, PCAP Analysis)
-- Intrusion Detection & Prevention (Wazuh IDS, Security Onion, Attack Simulation with Metasploit)
-- Endpoint Security & Monitoring (Windows Logs, PowerShell, LimaCharlie)
-- Virtualization & System Administration (VirtualBox, Ubuntu Server, Bash, Windows Security)
+- Log Analysis & SIEM (Wazuh, MySQL - Querying & Log Storage, Wazuh Event Forwarding)
+- Intrusion Detection & Prevention (Wazuh IDS - Log-based Threat Detection)
+- Threat Detection & Incident Response (MITRE ATT&CK, Security Event Logging, Custom Alerting in Wazuh)
+- Database Management & Automation (MySQL - Querying, Log Storage & Analysis, Automation with Bash Scripts)
+- System Administration & Security (Ubuntu Server, Bash Scripting, Service Management, Configuration Files)
 
 #
 
