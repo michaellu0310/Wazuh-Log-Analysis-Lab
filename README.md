@@ -90,6 +90,8 @@ Now that we have checked that the original log showed, we can automate the proce
 The next part in the project is to set up Grafana to visualize the Wazuh logs. We can add the Grafana APT repository using the commands, ``sudo apt-get install -y software-properties-common`` and ``sudo add-apt-repository "deb https://packages.grafana.com/oss/deb stable main"`` followed by ``sudo apt-get install -y grafana``. Now that Grafan is installed, we can start the server using ``sudo systemctl start grafana-server`` and ``sudo systemctl enable --now grafana-server``. We can check the status using ``sudo systemctl status grafana-server``. We want to set a up a login for the dashboard so we utilize the command ``ssh -L 3000:localhost:3000 admin@<VM-ip-address>``. Enter yes for fingerprint, enter a password, and restart the VM. Now that Grafana is officially running, on our host machine we can use any browser and navigate to ``http://<VM-ip-address>:3000`` to access Grafana.
 
 ![grafanalogin](https://github.com/user-attachments/assets/34243bda-220e-41a4-93f1-9623b7551403)
+![grafana](https://github.com/user-attachments/assets/0ca40df1-b893-47e7-b3c9-65e74f22b35c)
+
 
 
 ### Challenges & Solutions
