@@ -92,11 +92,12 @@ The next part in the project is to set up Grafana to visualize the Wazuh logs. W
 ![grafanalogin](https://github.com/user-attachments/assets/34243bda-220e-41a4-93f1-9623b7551403)
 ![grafana](https://github.com/user-attachments/assets/459d95e9-dee3-474c-8ad0-02dacca2aca1)
 
-Now within Grafana, add new data source and add mysql as a data source with the configuration shown.
+Now within Grafana, add new data source and add mysql as a data source with the configuration shown and click 'save & next'.
 
 ![datasource](https://github.com/user-attachments/assets/99c60d97-f952-490b-a68b-037b12a786ed)
 ![datasourcemysql](https://github.com/user-attachments/assets/eea91296-52ee-4e37-a636-a531ddf798d0)
 ![datasourceconfig](https://github.com/user-attachments/assets/157dec3d-0334-4fdd-8c09-4f4476ea3243)
+
 
 
 ### Challenges & Solutions
@@ -111,3 +112,8 @@ Now within Grafana, add new data source and add mysql as a data source with the 
 **Challenge 3:** Element '< parameters >' is not supported when configuring ossec.conf.
 
 **Solution 3:** Work around with an executable script send_to_mysql.sh.
+
+**Challenge 4:** When configuring Grafana mysql data source, an error says 'query failed - please inspect Grafana server log for details'.
+
+**Solution 4:** Using ``sudo nano /etc/mysql/mysql.conf.d/mysqld.cnf``, edit bind-address to 0.0.0.0
+![queryfailed](https://github.com/user-attachments/assets/1aa405f5-e999-41a3-858d-8c2b46377c9d)
