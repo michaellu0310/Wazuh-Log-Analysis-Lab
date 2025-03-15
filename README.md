@@ -98,7 +98,21 @@ Now within Grafana, add new data source and add mysql as a data source with the 
 ![datasourcemysql](https://github.com/user-attachments/assets/eea91296-52ee-4e37-a636-a531ddf798d0)
 ![datasourceconfig](https://github.com/user-attachments/assets/157dec3d-0334-4fdd-8c09-4f4476ea3243)
 
+Follow the screenshots below to add a new panel:
+![image](https://github.com/user-attachments/assets/d5bcc239-41e8-4765-803f-15b59fdc89e4)
+![image](https://github.com/user-attachments/assets/1a899cf1-c3e9-4e8b-b7bd-27df118129c5)
+![image](https://github.com/user-attachments/assets/efcc1652-e4a3-4604-8850-8751df9d5f4b)
 
+And now within the dashboard, change the visualization to 'Time Series', and under Query A add:
+```
+SELECT timestamp, event_id, event_description, source_ip, username
+FROM security_events
+ORDER BY timestamp DESC
+LIMIT 50;
+```
+![image](https://github.com/user-attachments/assets/f611d438-9518-4afc-a48b-2c1021ba1441)
+
+Now the visualization is set up and we can save the Dashboard as 'Wazuh Security Events'.
 
 ### Challenges & Solutions
 **Challenge 1:** VM does not have a dedicated IP address within network.
