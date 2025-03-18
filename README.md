@@ -76,7 +76,7 @@ After, restart Wazuh for these updated commands to log using ``sudo /var/ossec/b
 
 ### Verify Data
 
-We manually add a log onto mysql, ``sudo /var/ossec/bin/send_to_mysql.sh "1001" "Test Event" "192.168.1.1" "admin"``.  Next log into mySQL and run the command, ``SELECT * FROM security_events;`` and this should display the one log we created.
+We manually add a log onto mysql, ``sudo /var/ossec/bin/send_to_mysql.sh "1001" "Test Event" "192.168.1.30" "admin"``.  Next log into mySQL and run the command, ``SELECT * FROM security_events;`` and this should display the one log we created.
 
 ![testlog](https://github.com/user-attachments/assets/96019196-8f4b-4f25-8494-69255f68197b)
 
